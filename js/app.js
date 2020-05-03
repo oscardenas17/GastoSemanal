@@ -63,6 +63,16 @@ class Interfaz{
         //Insertar al HTML
         gastosListado.appendChild(li);
     }
+    //Comprueba el presupuesto restante
+        presupuestoRestante(cantidad){
+            const restante =  document.querySelector('span#restante');
+            //Leemos el presupuesto restante
+            const presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidad);
+
+            restante.innerHTML = ` ${presupuestoRestanteUsuario}`;
+          
+    }
+
 }
 
 
@@ -95,6 +105,7 @@ formulario.addEventListener('submit', function(e){
         //insertar en el HTML
         ui.imprimirMensaje('Correcto','correcto');
         ui.agregarGastoListado(nombreGasto, cantidadGasto);
+        ui.presupuestoRestante(cantidadGasto);
 
     }
 
